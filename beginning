@@ -1,0 +1,31 @@
+download chocolatey first, 
+cd %USERPROFILE%
+mkdir .kube
+config file
+choco install minikube
+minikube start
+minikube status
+minikube dashboard
+
+docker build -t " " 
+kubecetl create deployment first app --image //
+
+deploy to docker hub first, the image
+
+kubectl create deployment first-app --image=kanishk2404/kub-first-app
+
+kubectl expose deployment first-app --port=8080 --tyoe loadBalancer
+kubectl get service
+minikube service first-app
+
+
+kubectl scale deployemtn/first-app --replicas=3
+
+*Updating deployments*
+
+docker build -t kanishk2404/kub-first-app:2 .
+docker push kanishk2404/kub-first-app:2
+kubectl set image deployment/first-app kub-first-app=kanishk2404/kub-first-app:2
+kubectl rollout status deployment/first-app
+kubectl get pods
+kubectl get service first-app
