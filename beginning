@@ -14,7 +14,7 @@ deploy to docker hub first, the image
 
 kubectl create deployment first-app --image=kanishk2404/kub-first-app
 
-kubectl expose deployment first-app --port=8080 --tyoe loadBalancer
+kubectl expose deployment first-app --port=8080 --type loadBalancer
 kubectl get service
 minikube service first-app
 
@@ -29,3 +29,8 @@ kubectl set image deployment/first-app kub-first-app=kanishk2404/kub-first-app:2
 kubectl rollout status deployment/first-app
 kubectl get pods
 kubectl get service first-app
+
+
+
+kubectl rollout history deployment/first-app
+kubectl rollout undo deployment/first-app --to-revision=1
